@@ -2,6 +2,17 @@ from django.shortcuts import render, redirect
 from .forms import DonationForm
 from django.views.generic import ListView
 from .models import Post
+from django.shortcuts import get_object_or_404
+from django.views.generic import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic.edit import UpdateView
+
+
 
 class PostListView(ListView):
     model = Post
@@ -13,7 +24,52 @@ def donate(request):
         form = DonationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('donation_thanks')
+            return redirect('donation_thank_you')
     else:
         form = DonationForm()
     return render(request, 'core/donate.html', {'form': form})
+
+def donation_thank_you(request):
+    return render(request, 'core/donation_thank_you.html')
+
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'core/post_detail.html'
+    context_object_name = 'post'
+
+@method_decorator(login_required, name='dispatch')
+class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+    model = Post
+    fields = ['title', 'slug', 'content']
+    template_name = 'core/post_form.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+@method_decorator(login_required, name='dispatch')
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    fields = ['title', 'slug', 'content']
+    template_name = 'core/post_form.html'
+
+    def get_success_url(self):
+        return self.object.get_absolute_url()
+
+    def test_func(self):
+        return self.request.user == self.get_object().author
+
+
+@method_decorator(login_required, name='dispatch')
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    template_name = 'core/post_confirm_delete.html'
+    success_url = '/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().author
+

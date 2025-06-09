@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+  <h2>{{ post.title }}</h2>
+  <p><strong>By:</strong> {{ post.author }}</p>
+  <p><em>{{ post.created_on|date:"F j, Y" }}</em></p>
+  <div>{{ post.content }}</div>
+  {% if user == post.author %}
+  <a href="{% url 'post_edit' post.slug %}">Edit</a> |
+  <a href="{% url 'post_delete' post.slug %}">Delete</a>
+{% endif %}
+
+{% endblock %}

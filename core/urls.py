@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import PostListView
 
 urlpatterns = [
-    path('donate/', views.donate, name='donate'),
+    path('', PostListView.as_view(), name='post_list'),
 ]

@@ -14,6 +14,7 @@ from django.views.generic.edit import UpdateView
 from .models import ContactMessage
 from django import forms
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
@@ -103,3 +104,5 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == self.get_object().author
 
 
+def types_of_abuse_view(request):
+    return render(request, 'core/types_of_abuse.html')

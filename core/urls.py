@@ -6,6 +6,8 @@ from .views import (
     donate, donation_thank_you,
     contact_view, contact_thank_you  
 )
+from .views import types_of_abuse_view
+
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -19,4 +21,6 @@ urlpatterns = [
     path('post/<slug:slug>/edit/', PostUpdateView.as_view(), name='post_edit'),
     path('post/<slug:slug>/delete/', PostDeleteView.as_view(), name='post_delete'),
     path('post/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
+    path('types-of-abuse/', types_of_abuse_view, name='types_of_abuse'),
+
 ]

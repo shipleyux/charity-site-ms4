@@ -80,7 +80,105 @@
 
     </div>
   </div>
+
+<!-- Make a Difference Today Section -->
+<section class="make-a-difference-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Text Column -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="fw-semibold">Make a Difference Today</h2>
+        <p class="lead text-muted">
+          Your support can change lives. Join us in empowering women and fostering hope in our community.
+        </p>
+        <div class="mt-3">
+          <a href="{% url 'donate' %}" class="btn btn-primary me-2">Donate</a>
+          <a href="#" class="btn btn-outline-secondary">Get Involved</a>
+        </div>
+      </div>
+      
+      <!-- Image Column -->
+      <div class="col-md-6">
+        <img src="{% static 'images/make-a-difference.jpg' %}" alt="Women in conversation" class="img-fluid rounded shadow">
+      </div>
+
+    </div>
+  </div>
 </section>
+
+<!-- Latest News Section -->
+<section class="latest-news-preview py-4 bg-light">
+  <div class="container">
+    <h5 class="mb-3 text-uppercase text-muted">Latest News</h5>
+    
+    <!-- Flex row that centers content -->
+    <div class="row justify-content-center">
+      {% for post in latest_posts %}
+        <div class="col-md-4 d-flex">
+          <div class="p-3 border rounded h-100 w-100">
+            <h6 class="fw-semibold">{{ post.title }}</h6>
+            <a href="{% url 'post_detail' slug=post.slug %}" class="text-decoration-none">Read more →</a>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-center">No posts yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1-heading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+            What services do you provide?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel elit vitae arcu accumsan fermentum.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2-heading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+            How can someone reach out?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean id lorem at dui placerat.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq3-heading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+            Is support confidential?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
 
 
 

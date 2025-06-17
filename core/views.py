@@ -36,7 +36,11 @@ def contact_thank_you(request):
 
 
 def home_view(request):
-    return render(request, 'core/home.html')
+    latest_posts = Post.objects.order_by('-created_on')[:3]
+    return render(request, 'core/home.html', {
+        'latest_posts': latest_posts
+    })
+
 
 
 class PostListView(ListView):

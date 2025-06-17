@@ -44,10 +44,26 @@
     {% endblock %}
   </main>
 
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    <p class="mb-0">&copy; 2025 Swansea Women's Aid. All rights reserved.</p>
+  <footer class="bg-light text-center text-lg-start mt-5 border-top">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-6 text-md-start mb-3 mb-md-0">
+          <h5 class="mb-2">Swansea Women's Aid</h5>
+          <p class="mb-0">Supporting women and children affected by domestic abuse.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="{% url 'home' %}" class="text-decoration-none me-3">Home</a>
+          <a href="{% url 'donate' %}" class="text-decoration-none me-3">Donate</a>
+          <a href="{% url 'contact' %}" class="text-decoration-none">Contact</a>
+        </div>
+      </div>
+      <div class="text-center pt-3 small text-muted">
+        &copy; 2025 Swansea Women's Aid. All rights reserved.
+      </div>
+    </div>
   </footer>
-
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
 

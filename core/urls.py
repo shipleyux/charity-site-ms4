@@ -1,16 +1,20 @@
 from django.urls import path
 from .views import (
+    home_view,
     PostListView, PostDetailView,
     PostCreateView, PostUpdateView, PostDeleteView,
-    donate, donation_thank_you
+    donate, donation_thank_you,
+    contact_view, contact_thank_you  
 )
 
 urlpatterns = [
+    path('', home_view, name='home'),
     path('donate/', donate, name='donate'),
     path('thank-you/', donation_thank_you, name='donation_thank_you'),
-    path('', PostListView.as_view(), name='post_list'),
+    path('contact/', contact_view, name='contact'),
+    path('contact/thank-you/', contact_thank_you, name='contact_thank_you'),
 
-    # CRUD (order matters: new/edit/delete before slug)
+    path('news/', PostListView.as_view(), name='post_list'),
     path('post/new/', PostCreateView.as_view(), name='post_new'),
     path('post/<slug:slug>/edit/', PostUpdateView.as_view(), name='post_edit'),
     path('post/<slug:slug>/delete/', PostDeleteView.as_view(), name='post_delete'),

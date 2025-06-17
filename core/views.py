@@ -11,7 +11,32 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import UpdateView
+from .models import ContactMessage
+from django import forms
 
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['name', 'email', 'message']
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact_thank_you')
+    else:
+        form = ContactForm()
+    return render(request, 'core/contact.html', {'form': form})
+
+def contact_thank_you(request):
+    return render(request, 'core/contact_thank_you.html')
+
+
+
+
+def home_view(request):
+    return render(request, 'core/home.html')
 
 
 class PostListView(ListView):
@@ -72,4 +97,5 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().author
+
 

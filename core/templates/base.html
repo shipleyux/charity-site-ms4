@@ -5,22 +5,27 @@
   <title>{% block title %}Swansea Women's Aid{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- SAFETY ALERT BANNER – Always on top -->
+  <div class="safety-banner bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center small">
+  <strong>Your Safety Is Our Priority. Call our 24hr helpline: <a href="tel:01792644683" class="text-white text-decoration-underline">01792 644683</a></strong>  <a href="#" class="btn btn-danger btn-sm">HIDE THIS SITE</a>
+  </div>
+  
+
+  <!-- MAIN NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'post_list' %}">Swansea Women's Aid</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Swansea Women's Aid</a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">News</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'donate' %}">Donate</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
           {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-link" href="#">Hi {{ user.username }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
@@ -33,16 +38,16 @@
     </div>
   </nav>
 
-  <!-- Main content -->
+  <!-- Main page content -->
   <main class="container">
     {% block content %}
     {% endblock %}
   </main>
 
-  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3 mt-5">
     <p class="mb-0">&copy; 2025 Swansea Women's Aid. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
+

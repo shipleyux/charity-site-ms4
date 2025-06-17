@@ -3,41 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}Swansea Women's Aid{% endblock %}</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-        <ul>
-          <li><a href="{% url 'post_list' %}">News</a></li>
-          <li><a href="{% url 'donate' %}">Donate</a></li>
-          <li><a href="{% url 'admin:index' %}">Admin</a></li>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'post_list' %}">Swansea Women's Aid</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'donate' %}">Donate</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
           {% if user.is_authenticated %}
-          <p>Hi {{ user.username }}!</p>
-          <a href="{% url 'account_logout' %}">Logout</a>
-        {% else %}
-          <a href="{% url 'account_login' %}">Login</a> |
-          <a href="{% url 'account_signup' %}">Sign Up</a>
-        {% endif %}
+            <li class="nav-item"><a class="nav-link" href="#">Hi {{ user.username }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
+          {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
+          {% endif %}
         </ul>
+      </div>
+    </div>
+  </nav>
 
-      </nav>
-    <h1><a href="{% url 'post_list' %}">Swansea Women's Aid</a></h1>
-    <nav>
-      <!-- Navigation goes here -->
-    </nav>
-  </header>
-
-  <main>
+  <!-- Main content -->
+  <main class="container">
     {% block content %}
     {% endblock %}
   </main>
 
-  <footer>
-    <p>&copy; 2025 Swansea Women's Aid</p>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">&copy; 2025 Swansea Women's Aid. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

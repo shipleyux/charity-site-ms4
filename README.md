@@ -17,5 +17,5 @@ The site is designed with accessibility, user experience, and scalability in min
 - [Testing](#testing)
 - [Bugs & Issues](#bugs--issues)
 - [Future Enhancements](#future-enhancements)
-- [Credits](#credits)
+
 

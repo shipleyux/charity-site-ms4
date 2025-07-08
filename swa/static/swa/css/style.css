@@ -1,0 +1,277 @@
+.hero-section {
+  background-color: #f4eff7;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  color: #1a1a1a;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.hero-section .btn-group {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-section .btn-primary {
+  background-color: #6A0DAD;
+  border-color: #6A0DAD;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+}
+
+.hero-section .btn-outline-secondary {
+  color: #6A0DAD;
+  border: 1px solid #6A0DAD;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+}
+
+.hero-section .btn-outline-secondary:hover {
+  background-color: #6A0DAD;
+  color: #fff;
+}
+
+.hero-section .btn {
+  font-size: 1rem;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+
+/* Image styles */
+.hero-section .hero-image {
+  margin-top: 3rem;
+}
+
+.hero-section .hero-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+
+  /* === Section: Essential Services === */
+.essential-services {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.essential-services h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.essential-services h5 {
+  color: #6A0DAD;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.essential-services p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* === Section: Understanding Domestic Abuse === */
+.domestic-abuse-info {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+}
+
+.domestic-abuse-info h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+.domestic-abuse-info .lead {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.domestic-abuse-info i {
+  color: #d0315e;
+  font-size: 1.75rem;
+}
+
+/* === Section: Make a Difference === */
+.make-a-difference-section {
+  background-color: #f4eff7;
+  padding: 4rem 1rem;
+}
+
+.make-a-difference-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.make-a-difference-section .btn-primary {
+  background-color: #6A0DAD;
+  border-color: #6A0DAD;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.make-a-difference-section .btn-outline-secondary {
+  border-color: #6A0DAD;
+  color: #6A0DAD;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.make-a-difference-section .btn-outline-secondary:hover {
+  background-color: #6A0DAD;
+  color: #fff;
+}
+
+/* === Section: Latest News === */
+.latest-news-preview {
+  background-color: #f9f9f9;
+  padding: 3rem 1rem;
+}
+
+.latest-news-preview h5 {
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.latest-news-preview .border {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.latest-news-preview .border:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.latest-news-preview h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* === Section: FAQ Accordion === */
+.accordion-button {
+  background-color: #faf8fc;
+  font-weight: 500;
+  color: #1a1a1a;
+  border-radius: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #eae2f8;
+  color: #6A0DAD;
+}
+
+.accordion-body {
+  font-size: 1rem;
+  color: #444;
+  background-color: #fff;
+}
+
+/* === Typography Utilities === */
+.text-muted {
+  color: #666 !important;
+}
+
+h2, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+.essential-services {
+  background-color: #fff;
+  padding: 4rem 1rem;
+}
+
+.essential-services h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 3rem;
+}
+
+.essential-services h5 {
+  color: #6A0DAD;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.essential-services p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Custom Navbar Styling */
+.custom-navbar {
+  font-family: 'Outfit', sans-serif;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.custom-navbar .nav-link {
+  color: #444;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus,
+.custom-navbar .nav-link.active {
+  color: #6A0DAD;
+}
+
+.custom-navbar .user-greeting {
+  color: #6A0DAD;
+  font-weight: 600;
+}
+
+/* Responsive nav link spacing */
+@media (max-width: 991.98px) {
+  .custom-navbar .nav-link {
+    padding: 0.75rem 1rem;
+  }
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  color: #1a1a1a;
+  background-color: #fff;
+  line-height: 1.6;
+}

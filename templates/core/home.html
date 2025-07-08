@@ -6,21 +6,24 @@
 
 
 <!-- Hero Section -->
-<section class="text-center py-5 bg-light">
+<section class="hero-section">
   <div class="container">
-    <h1 class="display-5 fw-bold">Empowerment, safety and support for women and children experiencing domestic abuse.</h1>
-    <p class="lead mt-3">Together, we can provide safety, support, and hope for women in need.</p>
-    <div class="mt-4">
-      <a href="{% url 'donate' %}" class="btn btn-primary btn-lg me-2">Get Help</a>
-      <a href="#" class="btn btn-outline-secondary btn-lg">Learn More</a>
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h1>Empowerment, safety and support for women and children experiencing domestic abuse.</h1>
+        <p>Together, we can provide safety, support, and hope for women in need.</p>
+        <div class="btn-group mt-3">
+          <a href="{% url 'donate' %}" class="btn btn-primary">Get Help</a>
+          <a href="#" class="btn btn-outline-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image mt-4">
+      <img src="{% static 'images/women.jpg' %}" alt="Supportive women" class="img-fluid">
     </div>
   </div>
 </section>
 
-<!-- Image Banner -->
-<div class="container-fluid px-0">
-  <img src="{% static 'images/home-hero.jpg' %}" alt="Supportive women" class="img-fluid w-100">
-</div>
 
 <!-- Essential Services -->
 <section class="py-5 text-center bg-white">

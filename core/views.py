@@ -106,3 +106,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def types_of_abuse_view(request):
     return render(request, 'core/types_of_abuse.html')
+
+def about_us(request):
+    return render(request, 'core/about_us.html')

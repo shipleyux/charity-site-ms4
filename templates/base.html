@@ -25,6 +25,7 @@
           <li class="nav-item"><a class="nav-link" href="{% url 'types_of_abuse' %}">Understanding Abuse</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">News</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'donate' %}">Donate</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">About us</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
           {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-link" href="#">Hi {{ user.username }}</a></li>

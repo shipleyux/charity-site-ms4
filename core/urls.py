@@ -7,6 +7,7 @@ from .views import (
     contact_view, contact_thank_you  
 )
 from .views import types_of_abuse_view
+from .views import about_us
 
 
 urlpatterns = [
@@ -22,5 +23,6 @@ urlpatterns = [
     path('post/<slug:slug>/delete/', PostDeleteView.as_view(), name='post_delete'),
     path('post/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
     path('types-of-abuse/', types_of_abuse_view, name='types_of_abuse'),
+    path('about_us/', about_us, name='about_us'),
 
 ]

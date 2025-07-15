@@ -60,6 +60,9 @@ def donate(request):
 
             stripe.api_key = settings.STRIPE_SECRET_KEY
 
+            success_url = request.build_absolute_uri('/donation-thank-you')
+            cancel_url = request.build_absolute_uri('/donate')
+
             session = stripe.checkout.Session.create(
                 payment_method_types=['card'],
                 line_items=[{
@@ -73,9 +76,8 @@ def donate(request):
                     'quantity': 1,
                 }],
                 mode='payment',
-                success_url='https://charity-site-ms4.herokuapp.com/donation-thank-you',
-                cancel_url='https://charity-site-ms4.herokuapp.com/donate',
-
+                success_url=success_url,
+                cancel_url=cancel_url,
             )
             return redirect(session.url, code=303)
     else:

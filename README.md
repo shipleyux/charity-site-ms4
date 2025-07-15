@@ -69,3 +69,6 @@ I moved the login link from the top navigation to the footer because the login a
 *(To be added – contrast, font size, keyboard nav, etc.)*
 
 
+### Stripe Redirect URLs
+
+After a little research, I found that using `request.build_absolute_uri()` was a better option than hardcoding my Stripe success and cancel URLs. It automatically generates the full URL based on the current environment (local or deployed), which meant I didn’t have to manually switch between localhost and Heroku URLs while testing. This made my Stripe integration more reliable and flexible.

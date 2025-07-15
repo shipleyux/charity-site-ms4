@@ -19,3 +19,53 @@ The site is designed with accessibility, user experience, and scalability in min
 - [Future Enhancements](#future-enhancements)
 
 
+## UX Design
+
+The overall goal was to create a clean, accessible, and supportive online presence for Swansea Women’s Aid, prioritising ease of use for vulnerable users while also keeping things functional and manageable for staff.
+
+### Login Placement
+
+I moved the login link from the top navigation to the footer because the login area is only used by Swansea Women’s Aid staff. This helped simplify the main navigation and reduce any confusion for public users who don’t need to access it.
+
+<details>
+<summary><strong>Figma Designs</strong></summary>
+
+#### Homepage Wireframe
+![Homepage Wireframe](static/images/figma-home-wireframe.png)
+
+#### High-Fidelity Mockup
+![High Fidelity Homepage](static/images/figma-home-final.png)
+
+#### Mobile Layout Example
+![Mobile Mockup](static/images/figma-home-mobile.png)
+
+</details>
+
+---
+
+<details>
+<summary><strong>User Stories</strong></summary>
+
+| As a...           | I want to...                                      | So that I can...                                  |
+|------------------|---------------------------------------------------|---------------------------------------------------|
+| Vulnerable user  | Access help quickly                               | Feel safe and supported                          |
+| Public visitor   | Read about types of abuse                         | Understand the signs and know how to help others |
+| Staff member     | Log in securely                                   | Update the site with latest news and info        |
+| Donor            | Make a secure donation online                     | Support the charity’s mission                    |
+| Volunteer        | See how I can get involved                        | Offer my time and skills to help                 |
+
+</details>
+
+---
+
+### Design Decisions
+
+*(To be added – colors, fonts, layout rationale)*
+
+---
+
+### Accessibility Considerations
+
+*(To be added – contrast, font size, keyboard nav, etc.)*
+
+

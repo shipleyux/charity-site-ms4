@@ -34,3 +34,11 @@ Stripe integration issue was caused by the package not being installed in the vi
 
 - I realised the `.env` file was missing the `STRIPE_SECRET_KEY` line completely — I added it manually and restarted the server.
 - After that, the app loaded correctly.
+
+### Debug Summary: Post Timestamp Not Displaying
+
+- I noticed that the post list was showing the title, snippet, and author, but **not the date and time**.
+- I double-checked the template and saw it was using `{{ post.timestamp }}`—which looked right at first glance.
+- But then I remembered the field in my `Post` model is actually called `created_on`, not `timestamp`.
+- After changing the template line to `{{ post.created_on|date:"F j, Y, g:i a" }}`, the date and time showed up perfectly.
+- Just one of those little naming mismatches that’s easy to overlook!

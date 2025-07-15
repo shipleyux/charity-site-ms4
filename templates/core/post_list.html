@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
-  <h2 class="mb-4">Latest Posts</h2>
+  <h2 class="mb-4">Latest News</h2>
 
 {% if user.is_staff %}
   <a href="{% url 'post_new' %}">New Post</a>
@@ -19,7 +19,7 @@
               <h3><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h3>
               <p class="card-text">{{ post.content|truncatewords:25 }}</p>
               <p class="text-muted mb-1"><strong>Author:</strong> {{ post.author }}</p>
-              <p class="text-muted"><em>{{ post.timestamp|date:"F j, Y, g:i a" }}</em></p>
+              <p class="text-muted"><em>{{ post.created_on|date:"F j, Y, g:i a" }}</em></p>
             </div>
           </div>
         </div>

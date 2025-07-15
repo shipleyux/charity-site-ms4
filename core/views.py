@@ -73,8 +73,9 @@ def donate(request):
                     'quantity': 1,
                 }],
                 mode='payment',
-                success_url='https://yourdomain.com/donation-thank-you',
-                cancel_url='https://yourdomain.com/donate',
+                success_url='https://charity-site-ms4.herokuapp.com/donation-thank-you',
+                cancel_url='https://charity-site-ms4.herokuapp.com/donate',
+
             )
             return redirect(session.url, code=303)
     else:

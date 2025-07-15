@@ -13,6 +13,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import UpdateView
 from .models import ContactMessage
 from django import forms
+import stripe
+from django.conf import settings
+
 
 
 class ContactForm(forms.ModelForm):
@@ -53,10 +56,30 @@ def donate(request):
     if request.method == 'POST':
         form = DonationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('donation_thank_you')
+            amount = int(form.cleaned_data['amount'] * 100)  # convert pounds to pence
+
+            stripe.api_key = settings.STRIPE_SECRET_KEY
+
+            session = stripe.checkout.Session.create(
+                payment_method_types=['card'],
+                line_items=[{
+                    'price_data': {
+                        'currency': 'gbp',
+                        'product_data': {
+                            'name': 'Donation',
+                        },
+                        'unit_amount': amount,
+                    },
+                    'quantity': 1,
+                }],
+                mode='payment',
+                success_url='https://yourdomain.com/donation-thank-you',
+                cancel_url='https://yourdomain.com/donate',
+            )
+            return redirect(session.url, code=303)
     else:
         form = DonationForm()
+    
     return render(request, 'core/donate.html', {'form': form})
 
 def donation_thank_you(request):

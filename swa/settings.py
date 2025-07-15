@@ -157,3 +157,5 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')

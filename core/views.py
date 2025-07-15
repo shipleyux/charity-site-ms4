@@ -60,7 +60,7 @@ def donate(request):
 
             stripe.api_key = settings.STRIPE_SECRET_KEY
 
-            success_url = request.build_absolute_uri('/donation-thank-you')
+            success_url = request.build_absolute_uri('/thank-you/')
             cancel_url = request.build_absolute_uri('/donate')
 
             session = stripe.checkout.Session.create(

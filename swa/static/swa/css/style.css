@@ -25,11 +25,38 @@
 
 .hero-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem; /* adds space between buttons */
   flex-wrap: wrap;
   margin-bottom: 4rem;
 }
+
+/* Primary solid purple button */
+.hero-buttons .btn-primary {
+  background-color: #6A0DAD;
+  border-color: #6A0DAD;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+}
+
+/* Outline button with black text */
+.hero-buttons .btn-outline-secondary {
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  background-color: transparent;
+}
+
+/* On hover, darken the border slightly */
+.hero-buttons .btn-outline-secondary:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 
 
 
@@ -176,7 +203,7 @@
 
 /* === Typography Utilities === */
 .text-muted {
-  color: #666 !important;
+  color: #666;
 }
 
 h2, h5, h6 {

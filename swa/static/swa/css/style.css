@@ -79,7 +79,7 @@
 }
 
 .essential-services-section h2 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 3rem;
@@ -207,7 +207,7 @@
 }
 
 h2, h5, h6 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .essential-services {
@@ -235,7 +235,7 @@ h2, h5, h6 {
 
 /* Custom Navbar Styling */
 .custom-navbar {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -272,7 +272,7 @@ h2, h5, h6 {
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   color: #1a1a1a;
   background-color: #fff;
   line-height: 1.6;

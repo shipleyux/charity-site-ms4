@@ -131,7 +131,7 @@ These variables are used to keep sensitive information out of the codebase. The 
 - `SECRET_KEY`: Required by Django for cryptographic signing and session management.
 - `STRIPE_SECRET_KEY`: Used for processing payments securely via Stripe.
 - `DEBUG`: Set to `True` in development. This should be overridden to `False` in production using Heroku config vars.
-
+```
 
 5. **Apply database migrations** and run the server:
     ```bash
@@ -267,3 +267,10 @@ This model stores Stripe-processed donations for internal record-keeping.
 | `submitted_at` | DateTimeField | Automatically set when message is submitted   |
 
 Messages are handled via the site’s contact form and stored for admin review.
+
+
+### Database Schema
+
+Below is the Entity Relationship Diagram representing the database schema for this project:
+
+![Database Schema](static/images/erd.png)

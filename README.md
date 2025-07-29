@@ -10,6 +10,8 @@ The site is designed with accessibility, user experience, and scalability in min
 
 - [Overview](#overview)
 - [Scope](#scope)
+- [Market Research](#market-research)
+- [Business & Marketing Plan](#business-&-marketing-plan)
 - [UX Design](#ux-design)
 - [Features](#features)
 - [Database Schema](#database-schema)
@@ -34,13 +36,203 @@ The scope included building a fully responsive front end with accessible markup 
 - A secure, easy-to-use donation system  
 - A contact form to allow women to reach out for support  
 - A blog/news section staff can manage through the admin panel  
-- Multilingual support (English/Welsh)  
 
 The design prioritised clarity, calmness, and trust, in line with the sensitive nature of the content and the needs of the users.
 
-## UX Design
+## Market Research
 
-The overall goal was to create a clean, accessible, and supportive online presence for Swansea Women’s Aid, prioritising ease of use for vulnerable users while also keeping things functional and manageable for staff.
+As part of the research process, I used Refuge’s website as a key case study. I reviewed their layout, navigation, and key features, including how they structured their support services, crisis messaging, and user pathways. This helped inform decisions about clarity, accessibility, and tone.
+
+In addition, I conducted informal user interviews to understand real user needs. A key finding was that many women were unsure whether they were experiencing domestic abuse, and were also unclear on what services were actually available to them.
+
+In response to this, I made it a priority to:
+- Clearly signpost the different types of support Swansea Women’s Aid offers
+- Include a section on recognising the signs of domestic abuse
+- Ensure the language and design felt safe, reassuring, and easy to understand
+
+This user-centered approach directly shaped both the content strategy and layout of the site.
+
+## Business & Marketing Plan
+
+This project was developed for Swansea Women’s Aid, a local charity supporting women and children affected by domestic abuse. The primary goal was to create a website that reflects the professionalism and trustworthiness of the organisation, while making it easier for people to access support or engage with the charity.
+
+As part of the planning process, I conducted a stakeholder interview with the charity's leadership team. Together, we identified three key user groups:
+
+1. **Women in need of support** – the top priority. These users need fast, clear access to help, reassurance, and information.
+2. **Donors and funders** – individuals or organisations who want to support the charity through financial contributions.
+3. **Volunteers and job seekers** – people looking to get involved through employment or volunteering opportunities.
+
+The site’s layout and messaging were designed to serve each of these groups in priority order, with the homepage and main navigation focused on access to help, followed by donation and involvement opportunities.
+
+A key business objective was to improve funding outcomes. The site supports this by:
+
+- Presenting a professional, trustworthy image to potential funders and partners  
+- Making it easy to donate through an integrated Stripe payment system  
+- Clearly outlining the organisation’s impact, values, and services  
+- Providing up-to-date news and stories that funders can refer to in grant applications or due diligence processes  
+
+The website will also be supported by ongoing **social media outreach** and **local events**, both of which play an important role in community engagement and fundraising. For this reason, the **news and events section** was a key feature — allowing staff to easily announce upcoming campaigns, workshops, and public activities to their audience in real time.
+
+## Key Performance Indicators (KPIs)
+
+To help Swansea Women’s Aid track how well the new site is performing, I identified a few key areas they could keep an eye on over time:
+
+<details>
+<summary>🎯 <strong>User Engagement</strong></summary>
+
+- Are people spending longer on important pages like “Get Help” or “Signs of Abuse”?  
+- Is the bounce rate improving (i.e. are fewer people leaving after viewing just one page)?  
+- Are more people using the contact form to reach out?  
+
+</details>
+
+<details>
+<summary>💸 <strong>Donations & Fundraising</strong></summary>
+
+- Has the number of online donations increased since launching the new site?  
+- How many people are visiting the donation page?  
+- What percentage of visitors actually go on to donate?  
+
+</details>
+
+<details>
+<summary>📣 <strong>Communication & Awareness</strong></summary>
+
+- Are staff using the news section to keep the community updated?  
+- Are news posts being viewed and shared?  
+- Is more traffic coming from social media or email campaigns?  
+
+</details>
+
+<details>
+<summary>🛠️ <strong>Ease of Use for Staff</strong></summary>
+
+- Are staff able to update content like news and services without needing developer help?  
+- Is it saving them time compared to the old site?  
+- Are they getting fewer tech-related issues or support requests?  
+
+</details>
+
+These KPIs should give the charity a good sense of how the site is supporting users, making fundraising easier, and reducing workload for the team.
+
+## 🛠️ Development Plan
+
+To ensure the project stayed on track and met the needs of Swansea Women’s Aid, I followed a structured process from initial research through to development and deployment.
+
+I organised my research using google calender appointments and google sheets and for dveeloptment I used a **GitHub Projects board** to organise and prioritise tasks, which allowed me to track progress across all development stages. You can view it here:  
+[![View GitHub Project Board](docs/project-board.png)]
+
+Off the back of my research I  created wireframes and design layouts in Figma to plan the user interface before development began.  
+🔗 [Figma Designs](https://www.figma.com/file/example)
+
+---
+
+### 📆 Timeline
+
+```text
+Stakeholder Interviews
+     │
+     ▼
+User Research on Existing Site
+     │
+     ▼
+Figma Wireframes & Design
+     │
+     ▼
+Presentation of Designs to Stakeholders
+     │
+     ▼
+Full Stack Development in Django
+     │
+     ▼
+Stripe Integration and Heroku Deployment
+     │
+     ▼
+Testing and collate README doc
+     │
+     ▼
+Submission
+
+``````
+
+## User Research
+
+To understand user needs more deeply, I carried out informal user testing and interviews with both Swansea Women’s Aid staff and women who had used or would potentially use the service.
+
+### Key findings:
+- Many women weren’t sure whether what they were experiencing qualified as domestic abuse
+- Some were unaware of the full range of services available to them
+- Staff wanted a simpler way to update the site, post news, and promote events internally
+
+These insights shaped several design decisions:
+- A section was added to help users recognise the signs of domestic abuse
+- Service offerings were made clear and easy to find on the homepage and navigation
+- A custom news/blog feature was developed to empower staff to update the site without needing developer support
+- The overall tone, layout, and design were chosen to feel calm, accessible, and supportive
+
+This user-led approach ensured the site prioritised clarity, trust, and empowerment — all critical for the charity’s audience.
+
+## 🎯 User Experience (UX)
+
+### 🔍 Research-Driven Design
+
+The UX design for this site was shaped by a stakeholder interview and informal user research involving both staff and service users. During this process, several key issues with the existing site were raised:
+
+- Women in need weren’t sure if they qualified for support, or which services were available to them.
+- The content was hard to navigate and lacked clear structure.
+- Staff couldn’t easily update information, share news, or promote events.
+- The visual tone didn’t reflect the warmth, calmness, or professionalism of the organisation.
+
+These findings helped define the user needs and guided the redesign around **clarity, accessibility, and trust**.
+
+---
+
+### 🧭 Information Architecture (IA)
+
+The site’s structure was deliberately simplified to make it easier for users to find what they need quickly — especially those in moments of stress. The **main navigation** reflects the three core user groups identified in the stakeholder interview: service users, supporters, and volunteers.
+
+**Primary navigation includes:**
+- About Domestic Abuse
+- Get Help
+- Our Services
+- Who We Are
+- Get Involved
+- Latest News
+- Donate
+
+Content is prioritised to first support **women in crisis**, then **donors**, and finally **people looking to get involved**.
+
+---
+
+### Page Layout & Content Structure
+
+The homepage follows a clear visual hierarchy and intuitive flow:
+
+1. **Crisis message bar** — top priority with helpline number and a “hide this site” button for safety
+2. **Headline & subheadline** — summarising the organisation’s purpose in a reassuring, empowering tone
+3. **Primary CTAs** — “Get Help” and “Learn More” for immediate user action
+4. **Essential services preview** — showcasing the charity’s three core offerings with brief explanations
+5. **Educational content** — section on recognising abuse and accessing help, designed to reduce confusion and stigma
+6. **Donation & involvement section** — inviting supporters to help make a difference
+7. **Latest news carousel** — helps keep the site dynamic and up to date, and shows the charity’s ongoing activity
+8. **FAQs** — addresses common concerns and supports users who need more guidance
+
+The layout uses generous spacing, calm colours, soft rounded corners, and highly readable typography — all chosen to create a sense of safety and ease.
+
+---
+
+### Future Enhancements
+
+Several UX improvements were identified for future consideration:
+
+- **Multilingual support** — the ability to switch to Welsh or other languages for accessibility
+- **Quick exit feature** — currently in place, but could be enhanced with localStorage to improve speed
+- **Site-wide search** — to help users quickly locate specific content or support pages
+- **Backend CMS features** — allowing staff to manage services, news, and events even more efficiently
+
+---
+
+By combining user research with clear IA, accessible layout decisions, and inclusive design principles, the new site puts the needs of women first while still supporting the charity’s long-term engagement and fundraising goals.
 
 ### Login Placement
 

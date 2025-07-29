@@ -76,9 +76,8 @@
 /* === Section: Essential Services === */
 .essential-services-section {
   background-color: #ede6f0; /* match the light purple */
-  
   text-align: center;
-  padding: rem;
+  padding: 6rem;
  
 }
 
@@ -104,10 +103,10 @@
 
 
 /* === Section: Understanding Domestic Abuse === */
-.domestic-abuse-info {
+.info-section {
   font-family: 'Work Sans', sans-serif;
   background-color: #ffffff;
-  padding: 4rem 1rem;
+  padding: 8rem;
 }
 
 .domestic-abuse-info h2 {

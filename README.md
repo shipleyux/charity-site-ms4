@@ -9,6 +9,7 @@ The site is designed with accessibility, user experience, and scalability in min
 ## Table of Contents
 
 - [Overview](#overview)
+- [Scope](#scope)
 - [UX Design](#ux-design)
 - [Features](#features)
 - [Database Schema](#database-schema)
@@ -18,6 +19,24 @@ The site is designed with accessibility, user experience, and scalability in min
 - [Bugs & Issues](#bugs--issues)
 - [Future Enhancements](#future-enhancements)
 
+
+## Scope
+
+This project involved designing and developing a new website for Swansea Women’s Aid, with the aim of creating a modern, user-friendly platform that better serves women and families affected by domestic abuse. The charity specifically requested a website that would be:
+
+- Easy to navigate, especially for users in crisis  
+- Accessible on all devices  
+- Clear in communicating available services and support options  
+- Simple for staff to update with news and blog posts  
+
+The scope included building a fully responsive front end with accessible markup and intuitive page layouts, as well as integrating backend functionality using Django to enable dynamic content management. Key features include:
+
+- A secure, easy-to-use donation system  
+- A contact form to allow women to reach out for support  
+- A blog/news section staff can manage through the admin panel  
+- Multilingual support (English/Welsh)  
+
+The design prioritised clarity, calmness, and trust, in line with the sensitive nature of the content and the needs of the users.
 
 ## UX Design
 
@@ -187,10 +206,7 @@ The live site is deployed on [Heroku](https://swansea-womens-aid.herokuapp.com/)
 
 ---
 
-Let me know if your app uses:
-- Cloudinary (for media)
-- Any other env vars like `STRIPE_PUBLIC_KEY`  
-I can update this again in seconds. You’re very close to having a submission-ready README!
+
 
 
 ## Testing

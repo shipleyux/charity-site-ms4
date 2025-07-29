@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import os
 import dj_database_url
 
 from dotenv import load_dotenv
@@ -95,7 +94,7 @@ WSGI_APPLICATION = 'swa.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://localhost/charity_site_ms4_db',
+        default='postgresql://localhost/charity_site_ms4_db',
         conn_max_age=600,
         ssl_require=True
     )

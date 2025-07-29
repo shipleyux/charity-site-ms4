@@ -1,6 +1,8 @@
+
+
 .hero-section {
   background-color: #ede6f0; /* match the light purple */
-  padding: 4rem 1rem; /* more vertical spacing */
+  padding: 6rem 1rem;
   text-align: left;
 }
 
@@ -20,7 +22,7 @@
   font-weight: 400;
   color: #333;
   max-width: 700px;
-  margin: 0 auto 3rem;
+  margin-bottom: 2rem;
 }
 
 .hero-buttons {
@@ -28,7 +30,7 @@
   justify-content: flex-start;
   gap: 1rem; /* adds space between buttons */
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 
 /* Primary solid purple button */
@@ -74,8 +76,10 @@
 /* === Section: Essential Services === */
 .essential-services-section {
   background-color: #ede6f0; /* match the light purple */
-  padding: 4rem 1rem;
+  
   text-align: center;
+  padding: rem;
+ 
 }
 
 .essential-services-section h2 {
@@ -165,20 +169,22 @@
 }
 
 .make-a-difference-section .btn-outline-secondary:hover {
-  background-color: #6A0DAD;
+  background-color: #FBE7F1;
   color: #fff;
 }
 
 /* === Section: Latest News === */
 .latest-news-preview {
-  background-color: #f9f9f9;
-  padding: 3rem 1rem;
+  background-color: #ffffff;
+  padding: 5rem 1rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .latest-news-preview h5 {
   color: #999;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
   margin-bottom: 2rem;
 }
 
@@ -187,7 +193,7 @@
   border-radius: 8px;
   transition: box-shadow 0.3s ease;
   padding: 1rem;
-  background-color: #fff;
+  background-color: #ffff;
 }
 
 .latest-news-preview .border:hover {
@@ -253,8 +259,7 @@ h2, h5, h6 {
 /* Custom Navbar Styling */
 .custom-navbar {
   font-family: 'Work Sans', sans-serif;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #ede6f0;
 }
 
 .custom-navbar .navbar-brand {
@@ -296,6 +301,8 @@ body {
 }
 
 /* === Section: Understanding Domestic Abuse === */
+
+
 .domestic-abuse-info {
   font-family: 'Work Sans', sans-serif;
   background-color: #ffffff;
@@ -304,7 +311,7 @@ body {
 
 .domestic-abuse-info h2 {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #1a1a1a;
   margin-bottom: 2rem;
 }
@@ -328,4 +335,55 @@ body {
 
 .domestic-abuse-info p {
   margin-bottom: 0.75rem;
+}
+
+.safety-banner {
+  
+}
+
+.faq-section {
+  background-color: #1e002e; /* Very dark purple */
+  color: #ffffff;
+  padding: 4rem 1rem;
+}
+
+.faq-section h2 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.faq-section .accordion-button {
+  background-color: #2a003f; /* Slightly lighter than background */
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+}
+
+.faq-section .accordion-button.collapsed {
+  background-color: #1e002e;
+  color: #ffffff;
+}
+
+.faq-section .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.2);
+}
+
+.faq-section .accordion-body {
+  background-color: #1e002e;
+  color: #ffffff;
+}
+
+.faq-section .accordion-item {
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.faq-section .accordion-button::after {
+  filter: brightness(0) invert(1); /* makes the default chevron white */
+}
+
+.card-info {
+  background-color: #ffd8ef;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }

@@ -3,13 +3,44 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-  <h2>{{ post.title }}</h2>
-  <p><strong>By:</strong> {{ post.author }}</p>
-  <p><em>{{ post.created_on|date:"F j, Y" }}</em></p>
-  <div>{{ post.content }}</div>
-  {% if user == post.author %}
-  <a href="{% url 'post_edit' post.slug %}">Edit</a> |
-  <a href="{% url 'post_delete' post.slug %}">Delete</a>
-{% endif %}
+<section class="post-detail-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
 
+        <!-- Back Button -->
+        <a href="{% url 'post_list' %}" class="btn btn-outline-secondary mb-4">
+          ← All News
+        </a>
+
+        <article class="bg-white p-4 p-md-5 rounded shadow-sm">
+          <h1 class="mb-3 fw-semibold">{{ post.title }}</h1>
+
+          <div class="text-muted mb-4 small">
+            <span><strong>By:</strong> {{ post.author }}</span><br>
+            <span><i class="bi bi-calendar-event"></i> {{ post.created_on|date:"F j, Y" }}</span>
+          </div>
+
+          <div class="post-content mb-4">
+            {{ post.content|safe }}
+          </div>
+
+          {% if user == post.author %}
+            <div class="d-flex gap-3">
+              <a href="{% url 'post_edit' post.slug %}" class="btn btn-outline-primary btn-sm">
+                <i class="bi bi-pencil-square"></i> Edit
+              </a>
+              <a href="{% url 'post_delete' post.slug %}" class="btn btn-outline-danger btn-sm">
+                <i class="bi bi-trash3"></i> Delete
+              </a>
+            </div>
+          {% endif %}
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
+
+

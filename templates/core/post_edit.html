@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Edit Post</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Update</button>
-  </form>
+<div class="container my-5">
+  <div class="card shadow rounded-3">
+    <div class="card-header bg-warning text-dark">
+      <h2 class="mb-0">Edit Post</h2>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="mt-3 text-end">
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
+

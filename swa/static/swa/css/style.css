@@ -386,3 +386,10 @@ body {
   border-radius: 0.5rem;
   padding: 1rem;
 }
+
+.black-link {
+  color: black;
+  text-decoration: none;
+}
+
+

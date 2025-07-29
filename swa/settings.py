@@ -92,11 +92,13 @@ WSGI_APPLICATION = 'swa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+IS_HEROKU = 'DATABASE_URL' in os.environ
+
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://localhost/charity_site_ms4_db',
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=IS_HEROKU 
     )
 }
 

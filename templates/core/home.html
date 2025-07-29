@@ -122,17 +122,20 @@
 </section>
 
 <!-- Latest News Section -->
-<section class="latest-news-preview py-4">
+<section class="latest-news-preview py-5 bg-light border-top">
   <div class="container">
-    <h5 class="mb-3 text-uppercase text-muted">Latest News</h5>
+    <h5 class="mb-4 text-uppercase text-muted">Latest News</h5>
     
-    <!-- Flex row that centers content -->
-    <div class="row justify-content-center">
+    <div class="row g-4">
       {% for post in latest_posts %}
-        <div class="col-md-4 d-flex">
-          <div class="p-3 border rounded h-100 w-100">
-            <h6 class="fw-semibold">{{ post.title }}</h6>
-            <a href="{% url 'post_detail' slug=post.slug %}" class="text-decoration-none">Read more →</a>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h6 class="card-title fw-semibold">{{ post.title }}</h6>
+              <p class="card-text text-muted small mb-2">{{ post.created_on|date:"F j, Y" }}</p>
+              <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+              <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-sm btn-outline-primary mt-auto">Read more</a>
+            </div>
           </div>
         </div>
       {% empty %}
@@ -141,6 +144,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 <section class="faq-section">

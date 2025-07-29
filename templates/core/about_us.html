@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- Who We Are Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-lilac">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 mb-4 mb-md-0">
@@ -13,59 +13,71 @@
         </p>
       </div>
       <div class="col-md-6">
-        <img src="{% static 'images/who-we-are.jpg' %}" class="img-fluid rounded" alt="Two women holding flowers">
+        <img src="{% static 'images/women-flowers.jpg' %}" class="img-fluid rounded" alt="Two women holding flowers">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Values, Vision, Mission -->
-<section class="py-5">
+<!-- Our Values Section -->
+<section class="py-5 bg-lilac">
   <div class="container">
-    <h2 class="mb-4">Values, Vision, Mission Statement and Key Principle</h2>
+    <h2 class="mb-4">Our Values</h2>
     <div class="row">
-      <div class="col-lg-6">
-        <ul>
-          <li>Excellence – in all we do and how we do it.</li>
-          <li>Equality – non-discriminatory and non-judgemental.</li>
-          <li>Diversity – everyone welcomed and valued.</li>
-          <li>Women and children at the heart of all we do – being supported, informing services.</li>
-          <li>Innovation – in service delivery and planning.</li>
-          <li>Integrity – honesty, reliability, trustworthiness.</li>
-          <li>Empowerment – encouraging women and children to reach their full potential.</li>
-          <li>Confidential – respecting privacy and lawful.</li>
-          <li>Collaborative – working with others to change things for the better.</li>
+      <div class="col-lg-10">
+        <ul class="list-group list-group-flush fs-5">
+          <li class="list-group-item">Excellence – in all we do and how we do it.</li>
+          <li class="list-group-item">Equality – non-discriminatory and non-judgemental.</li>
+          <li class="list-group-item">Diversity – everyone welcomed and valued.</li>
+          <li class="list-group-item">Women and children at the heart of all we do – being supported, informing services.</li>
+          <li class="list-group-item">Innovation – in service delivery and planning.</li>
+          <li class="list-group-item">Integrity – honesty, reliability, trustworthiness.</li>
+          <li class="list-group-item">Empowerment – encouraging women and children to reach their full potential.</li>
+          <li class="list-group-item">Confidential – respecting privacy and lawful.</li>
+          <li class="list-group-item">Collaborative – working with others to change things for the better.</li>
         </ul>
       </div>
-      <div class="col-lg-6">
-        <div class="row text-center">
-          <div class="col-md-4 mb-4">
-            <i class="bi bi-eye fs-3 text-primary"></i>
-            <h5>Vision</h5>
-            <p>A world where women and children are free from abuse.</p>
-          </div>
-          <div class="col-md-4 mb-4">
-            <i class="bi bi-bullseye fs-3 text-primary"></i>
-            <h5>Mission Statement</h5>
-            <p>Supporting and empowering women and children to live free from domestic violence and abuse in all its forms.</p>
-          </div>
-          <div class="col-md-4 mb-4">
-            <i class="bi bi-key fs-3 text-primary"></i>
-            <h5>Key Principle</h5>
-            <p>SWA recognises that violence against women, domestic abuse and sexual violence are gender-based forms of violence that are a cause and consequence of gender inequality.</p>
-          </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision, Mission, Key Principle Section -->
+<section class="py-5 bg-lilac">
+  <div class="container">
+    <h2 class="mb-4 text-center">Vision, Mission & Key Principle</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <i class="bi bi-eye fs-2 text-danger"></i>
+          <h5 class="mt-3">Vision</h5>
+          <p>A world where women and children are free from abuse.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <i class="bi bi-bullseye fs-2 text-danger"></i>
+          <h5 class="mt-3">Mission Statement</h5>
+          <p>Supporting and empowering women and children to live free from domestic violence and abuse in all its forms.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <i class="bi bi-key fs-2 text-danger"></i>
+          <h5 class="mt-3">Key Principle</h5>
+          <p>SWA recognises that violence against women, domestic abuse and sexual violence are gender-based forms of violence that are a cause and consequence of gender inequality.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- CEO/Visionary Leader Section -->
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 order-md-2 mb-4 mb-md-0">
-        <img src="{% static 'images/ceo.jpg' %}" class="img-fluid rounded" alt="CEO portrait">
+        <img src="{% static 'images/founder.jpg' %}" class="img-fluid rounded" alt="CEO portrait">
       </div>
       <div class="col-md-6 order-md-1">
         <h2 class="mb-3">Discover the Visionary Leadership Behind Our Women's Refuge Charity</h2>
@@ -81,21 +93,22 @@
     <h2 class="mb-3">Impact Reports</h2>
     <p>Your support can change lives. Join us in empowering women and fostering hope in our community.</p>
     <div class="d-flex justify-content-center gap-3 mt-3">
-      <button class="btn btn-outline-light">2015–2016</button>
-      <button class="btn btn-outline-light">2017–2018</button>
+      <a href="{% static 'reports/2016.pdf' %}" class="btn btn-outline-light" target="_blank">2015-2016</a>
+
+      <a href="{% static 'reports/2017.pdf' %}" class="btn btn-outline-light" target="_blank">2017-2018</a>
     </div>
   </div>
 </section>
 
 <!-- Annual Reports -->
-<section class="py-5">
+<section class="py-5 bg-lilac">
   <div class="container">
     <h2 class="mb-3">Explore Our Annual Reports</h2>
     <p>Our annual reports provide a comprehensive overview of our activities and impact. Discover how your support has made a difference in the lives of women and children in need.</p>
-    <div class="card p-4 mt-3">
+    <div class="mt-3">
       <h5>Reports</h5>
       <p>View our latest annual report here.</p>
-      <a href="#" class="btn btn-outline-primary">Read report</a>
+      <a href="#" class="btn btn-outline-dark">Read report</a>
     </div>
   </div>
 </section>
@@ -109,8 +122,8 @@
         <p>At Swansea Women's Aid, we prioritise the safety and well-being of women and children. Our policies reflect our dedication to providing a supportive and nurturing environment.</p>
       </div>
       <div class="col-md-4 d-flex flex-column gap-2">
-        <a href="#" class="btn btn-outline-primary">Safeguarding Children and Young People</a>
-        <a href="#" class="btn btn-outline-primary">SOVA POLICY</a>
+        <a href="#" class="btn btn-outline-dark">Safeguarding Children and Young People</a>
+        <a href="#" class="btn btn-outline-dark">SOVA POLICY</a>
       </div>
     </div>
   </div>

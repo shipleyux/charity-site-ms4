@@ -122,9 +122,9 @@
 </section>
 
 <!-- Latest News Section -->
-<section class="latest-news-preview py-5 bg-light border-top">
+<section class="latest-news-preview py-5">
   <div class="container">
-    <h5 class="mb-4 text-uppercase text-muted">Latest News</h5>
+    <h2 class="mb-4">Latest News</h2>
     
     <div class="row g-4">
       {% for post in latest_posts %}
@@ -134,7 +134,7 @@
               <h6 class="card-title fw-semibold">{{ post.title }}</h6>
               <p class="card-text text-muted small mb-2">{{ post.created_on|date:"F j, Y" }}</p>
               <p class="card-text">{{ post.content|truncatewords:20 }}</p>
-              <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-sm btn-outline-primary mt-auto">Read more</a>
+              <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-sm btn-outline-dark mt-auto">Read more</a>
             </div>
           </div>
         </div>

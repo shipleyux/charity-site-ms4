@@ -6,6 +6,13 @@ The site is designed with accessibility, user experience, and scalability in min
 
 ---
 
+### 🔐 Admin Login for Testing
+
+To access the admin-only features during assessment:
+
+- **Username:** `Admin`  
+- **Password:** `Messages1`
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -285,6 +292,28 @@ I moved the login link from the top navigation to the footer because the login a
 After a little research, I found that using `request.build_absolute_uri()` was a better option than hardcoding my Stripe success and cancel URLs. It automatically generates the full URL based on the current environment (local or deployed), which meant I didn’t have to manually switch between localhost and Heroku URLs while testing. This made my Stripe integration more reliable and flexible.
 
 ## Features
+
+## CRUD Functionality & Admin Access
+
+This project includes full CRUD (Create, Read, Update, Delete) functionality, implemented specifically for Swansea Women’s Aid staff to manage the site’s news section.
+
+- **Create**: Staff users can log in and add new blog posts via a secure form.
+- **Read**: All visitors can view published posts on the news page.
+- **Update**: Staff can edit existing posts through a staff-only interface.
+- **Delete**: Staff can also delete posts when necessary, with confirmation.
+
+Access to these features is restricted using Django’s built-in authentication system and role-based permissions. Only users with staff status (`is_staff = True`) can create or manage posts.
+
+To keep the main navigation clean and user-focused, the **staff login link is placed discreetly in the footer** of the site.
+
+### 🔐 Admin Login for Testing
+
+To access the admin-only features during assessment:
+
+- **Username:** `Admin`  
+- **Password:** `Messages1`
+
+> *Please note: This account has staff permissions and can create, edit, and delete blog posts. Use responsibly.*
 
 - Responsive layout for desktop and mobile
 - Informational homepage with support messaging

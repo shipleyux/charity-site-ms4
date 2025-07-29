@@ -181,7 +181,7 @@
 }
 
 .latest-news-preview h5 {
-  color: #999;
+  color: black;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   margin-bottom: 2rem;
@@ -297,6 +297,7 @@ body {
   color: #1a1a1a;
   background-color: #fff;
   line-height: 1.6;
+  
 }
 
 /* === Section: Understanding Domestic Abuse === */
@@ -392,4 +393,6 @@ body {
   text-decoration: none;
 }
 
-
+.bg-lilac {
+  background-color: #ede6f0; /* soft lilac */
+}

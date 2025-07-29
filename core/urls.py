@@ -1,4 +1,6 @@
-from django.urls import path
+from django.urls import path, include
+
+
 from .views import (
     home_view,
     PostListView, PostDetailView,
@@ -24,5 +26,6 @@ urlpatterns = [
     path('post/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
     path('types-of-abuse/', types_of_abuse_view, name='types_of_abuse'),
     path('about_us/', about_us, name='about_us'),
+    path('accounts/', include('allauth.urls')),
 
 ]

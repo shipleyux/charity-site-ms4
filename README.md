@@ -124,13 +124,23 @@ These KPIs should give the charity a good sense of how the site is supporting us
 
 ## 🛠️ Development Plan
 
-To ensure the project stayed on track and met the needs of Swansea Women’s Aid, I followed a structured process from initial research through to development and deployment.
+To ensure the project stayed on track and met the needs of Swansea Women’s Aid, I followed a process from initial research through to development and deployment.
 
 I organised my research using google calender appointments and google sheets and for dveeloptment I used a **GitHub Projects board** to organise and prioritise tasks, which allowed me to track progress across all development stages. You can view it here:  
-[![View GitHub Project Board](docs/project-board.png)]
+<details>
+<summary>Project Board</summary>
 
+![Project Board Screenshot](swa/static/images/project.png)
+
+</details>
 Off the back of my research I  created wireframes and design layouts in Figma to plan the user interface before development began.  
-🔗 [Figma Designs](https://www.figma.com/file/example)
+<details>
+<summary>Figma Designs</summary>
+
+![Figma Design Screenshot](swa/static/images/figma.png)
+
+</details>
+
 
 ---
 
@@ -194,16 +204,28 @@ These findings helped define the user needs and guided the redesign around **cla
 
 ---
 
+
+<details>
+<summary><strong>User Stories</strong></summary>
+
+| As a...           | I want to...                                      | So that I can...                                  |
+|------------------|---------------------------------------------------|---------------------------------------------------|
+| Vulnerable user  | Access help quickly                               | Feel safe and supported                          |
+| Public visitor   | Read about types of abuse                         | Understand the signs and know how to help others |
+| Staff member     | Log in securely                                   | Update the site with latest news and info        |
+| Donor            | Make a secure donation online                     | Support the charity’s mission                    |
+| Volunteer        | See how I can get involved                        | Offer my time and skills to help                 |
+
+</details>
+
 ### 🧭 Information Architecture (IA)
 
 The site’s structure was deliberately simplified to make it easier for users to find what they need quickly — especially those in moments of stress. The **main navigation** reflects the three core user groups identified in the stakeholder interview: service users, supporters, and volunteers.
 
 **Primary navigation includes:**
 - About Domestic Abuse
-- Get Help
-- Our Services
-- Who We Are
-- Get Involved
+- About us
+- Contact us
 - Latest News
 - Donate
 
@@ -226,7 +248,20 @@ The homepage follows a clear visual hierarchy and intuitive flow:
 
 The layout uses generous spacing, calm colours, soft rounded corners, and highly readable typography — all chosen to create a sense of safety and ease.
 
+<summary>Figma Designs</summary>
+
+![Figma Design Screenshot](swa/static/images/figma.png)
+
+</details>
+
+### Staff Login Placement
+
+I moved the login link from the top navigation to the footer because the login area is only used by Swansea Women’s Aid staff. This helped simplify the main navigation and reduce any confusion for public users who don’t need to access it.
+
 ---
+
+## Testing & Bug Log
+[View Testing Documentation](testing.md)
 
 ### Future Enhancements
 
@@ -241,57 +276,63 @@ Several UX improvements were identified for future consideration:
 
 By combining user research with clear IA, accessible layout decisions, and inclusive design principles, the new site puts the needs of women first while still supporting the charity’s long-term engagement and fundraising goals.
 
-### Login Placement
-
-I moved the login link from the top navigation to the footer because the login area is only used by Swansea Women’s Aid staff. This helped simplify the main navigation and reduce any confusion for public users who don’t need to access it.
-
-<details>
-<summary><strong>Figma Designs</strong></summary>
-
-#### Homepage Wireframe
-![Homepage Wireframe](static/images/figma-home-wireframe.png)
-
-#### High-Fidelity Mockup
-![High Fidelity Homepage](static/images/figma-home-final.png)
-
-#### Mobile Layout Example
-![Mobile Mockup](static/images/figma-home-mobile.png)
-
-</details>
-
----
-
-<details>
-<summary><strong>User Stories</strong></summary>
-
-| As a...           | I want to...                                      | So that I can...                                  |
-|------------------|---------------------------------------------------|---------------------------------------------------|
-| Vulnerable user  | Access help quickly                               | Feel safe and supported                          |
-| Public visitor   | Read about types of abuse                         | Understand the signs and know how to help others |
-| Staff member     | Log in securely                                   | Update the site with latest news and info        |
-| Donor            | Make a secure donation online                     | Support the charity’s mission                    |
-| Volunteer        | See how I can get involved                        | Offer my time and skills to help                 |
-
-</details>
-
----
-
-### Design Decisions
-
-*(To be added)*
-
----
-
-### Accessibility Considerations
-
-*(To be added)*
-
-
-### Stripe Redirect URLs
-
-After a little research, I found that using `request.build_absolute_uri()` was a better option than hardcoding my Stripe success and cancel URLs. It automatically generates the full URL based on the current environment (local or deployed), which meant I didn’t have to manually switch between localhost and Heroku URLs while testing. This made my Stripe integration more reliable and flexible.
 
 ## Features
+
+## 🧩 Data Models & Entity Relationship Diagram
+
+<details>
+<summary>Click to view the Entity Relationship Diagram</summary>
+
+![Database Schema](swa/static/images/erd.png)
+
+> **Note:** The ERD includes an `email` field on the `User` model. This is part of Django’s built-in authentication system. However, this project does not use email for user login or account creation.
+
+</details>
+
+The application uses a PostgreSQL database with three custom models: `Post`, `Donation`, and `ContactMessage`.
+
+---
+
+### 📝 Post Model
+
+| Field        | Type               | Description                                 |
+|--------------|--------------------|---------------------------------------------|
+| `title`      | CharField          | Title of the blog post                      |
+| `slug`       | SlugField (unique) | URL-friendly identifier                     |
+| `content`    | TextField          | Body content of the post                    |
+| `created_on` | DateTimeField      | Timestamp when post was created             |
+| `author`     | ForeignKey to User | Link to Django’s built-in user model        |
+
+Posts are ordered by `created_on` in descending order. Each post has a dynamic detail URL generated by its slug.
+
+---
+
+### 💳 Donation Model
+
+| Field        | Type              | Description                                      |
+|--------------|-------------------|--------------------------------------------------|
+| `name`       | CharField         | Name of the donor                                |
+| `email`      | EmailField        | Optional email address of the donor              |
+| `amount`     | DecimalField      | Donation amount in GBP                           |
+| `message`    | TextField         | Optional message left by the donor               |
+| `timestamp`  | DateTimeField     | Time donation was made (default: now)            |
+
+This model stores Stripe-processed donations for internal record-keeping.
+
+---
+
+### 📬 ContactMessage Model
+
+| Field          | Type          | Description                                   |
+|----------------|---------------|-----------------------------------------------|
+| `name`         | CharField     | Name of the user submitting the message       |
+| `email`        | EmailField    | Email address of the user                     |
+| `message`      | TextField     | The message content                           |
+| `submitted_at` | DateTimeField | Automatically set when message is submitted   |
+
+Messages are handled via the site’s contact form and stored for admin review.
+
 
 ## CRUD Functionality & Admin Access
 
@@ -331,7 +372,6 @@ To access the admin-only features during assessment:
 - Bootstrap 5
 - HTML5 / CSS3 
 - Stripe API (for payments)
-- Cloudinary (for image hosting)
 - Git & GitHub
 - Heroku (deployment)
 
@@ -427,87 +467,29 @@ The live site is deployed on [Heroku](https://swansea-womens-aid.herokuapp.com/)
 
 ---
 
+## 💬 Personal Reflection
+
+As a student developer, I’ve poured my energy into understanding and building out the core backend functionality of this project. While I’m aware the site still needs significant styling work to feel fully polished, my priority throughout has been ensuring that the core features — including the database, CRUD operations, Stripe integration, and admin tools — are functional, secure, and aligned with the assessment criteria.
+
+This has been a real learning journey, and backend development has been the area I found most challenging. I made the conscious decision to focus on functionality first, knowing I can return to refine the design with more confidence once the foundations are solid.
+
+I will continue working on this project after submission to ensure it is fully styled and visually aligned with the needs of the charity and its users. I’m proud of the progress so far and excited to keep improving the site.
 
 
+## 🙏 Acknowledgements & Accreditations
 
-## Testing
+This project was completed as part of the **Level 5 Diploma in Web Application Development (Unit 4)**.
 
-### Overview
+### 👨‍🏫 Special Thanks
 
-Testing was carried out throughout development to ensure functionality, usability, and responsiveness. Due to time constraints and project scope, manual testing was the primary method used.
+- Huge thanks to **Spencer Barribal**, my mentor, for his support and guidance throughout this project.
+- I’d also like to acknowledge **Code Institute** – I used their course materials and sample projects for reference, guidance, and inspiration, especially when learning how to implement Django views, CRUD functionality, and Stripe integration.
 
-### Manual Testing
+### 🧠 Content & Assets
 
-Manual tests were performed on all key features using a range of browsers (Chrome, Firefox, Safari) and devices (laptop, tablet, mobile). The following areas were tested:
-
-| Feature                      | Test Performed                                                                 | Outcome        |
-|-----------------------------|----------------------------------------------------------------------------------|----------------|
-| Homepage                    | Checked responsiveness and link functionality                                   | Pass ✅         |
-| Navigation bar              | Checked visibility, responsiveness, and active links                            | Pass ✅         |
-| Blog list & detail pages    | Confirmed posts display correctly, with readable formatting                     | Pass ✅         |
-| Admin blog functionality    | Staff users can create, edit, and delete posts via Django admin                 | Pass ✅         |
-| Contact form                | Tested required fields and success message upon submission                      | Pass ✅         |
-| Stripe donation form        | Verified with test card, handled success/cancel flows                           | Pass ✅         |
-| User authentication         | Tested login, logout, restricted page access for unauthenticated users          | Pass ✅         |
-| 404 / 500 error pages       | Triggered intentionally to confirm custom error pages are displayed             | Pass ✅         |
-| Footer login link           | Confirmed visibility and restricted access only for staff                       | Pass ✅         |
-
-### Stripe Testing
-
-Stripe’s test environment was used with the following test cards:
-
-- **Successful payment**: `4242 4242 4242 4242`
-- **Declined card**: `4000 0000 0000 0002`
-
-Both redirect flows and success messages were verified.
-
-
-## Database Schema
-
-The application uses a PostgreSQL database with three custom models: `Post`, `Donation`, and `ContactMessage`.
-
-### Post Model
-
-| Field        | Type               | Description                                 |
-|--------------|--------------------|---------------------------------------------|
-| `title`      | CharField          | Title of the blog post                      |
-| `slug`       | SlugField (unique) | URL-friendly identifier                     |
-| `content`    | TextField          | Body content of the post                    |
-| `created_on` | DateTimeField      | Timestamp when post was created             |
-| `author`     | ForeignKey to User | Link to Django’s built-in user model        |
-
-Posts are ordered by `created_on` in descending order. Each post has a dynamic detail URL generated by its slug.
+- **Text content** on the site was primarily generated with the assistance of AI, then edited for tone, clarity, and suitability for the Swansea Women’s Aid audience.
+- **Photography** is sourced from [Unsplash](https://unsplash.com/), a free library of high-quality images, and used under their open license.
 
 ---
 
-### Donation Model
-
-| Field        | Type              | Description                                      |
-|--------------|-------------------|--------------------------------------------------|
-| `name`       | CharField         | Name of the donor                                |
-| `email`      | EmailField        | Optional email address of the donor              |
-| `amount`     | DecimalField      | Donation amount in GBP                           |
-| `message`    | TextField         | Optional message left by the donor               |
-| `timestamp`  | DateTimeField     | Time donation was made (default: now)            |
-
-This model stores Stripe-processed donations for internal record-keeping.
-
----
-
-### ContactMessage Model
-
-| Field          | Type          | Description                                   |
-|----------------|---------------|-----------------------------------------------|
-| `name`         | CharField     | Name of the user submitting the message       |
-| `email`        | EmailField    | Email address of the user                     |
-| `message`      | TextField     | The message content                           |
-| `submitted_at` | DateTimeField | Automatically set when message is submitted   |
-
-Messages are handled via the site’s contact form and stored for admin review.
-
-
-### Database Schema
-
-Below is the Entity Relationship Diagram representing the database schema for this project:
-
-![Database Schema](static/images/erd.png)
+This project represents a major step forward in my backend development journey. While there’s still styling work to be done, I’m proud of the functional foundation I’ve built and look forward to continuing to enhance the site after submission.

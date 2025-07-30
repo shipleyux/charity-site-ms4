@@ -1,40 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Home{% endblock %}
+
 {% block content %}
-
-
-
 <!-- Hero Section -->
 <section class="hero-section">
   <div class="container">
-   
-      <div class="col-md-7">
-        <h1>Empowerment, safety and support for women and children experiencing domestic abuse.</h1>
-        <p>Together, we can provide safety, support, and hope for women in need.</p>
-        <div class="hero-buttons mt-3">
-
-          <a href="{% url 'donate' %}" class="btn btn-primary">Get Help</a>
-          <a href="#" class="btn btn-outline-secondary">Learn More</a>   
-        </div>
-    
+    <div class="col-md-7">
+      <h1>Empowerment, safety and support for women and children experiencing domestic abuse.</h1>
+      <p>Together, we can provide safety, support, and hope for women in need.</p>
+      <div class="hero-buttons mt-3">
+        <a href="{% url 'contact' %}" class="btn btn-primary" aria-label="Contact us to get help">Get Help</a>
+        <a href="{% url 'types_of_abuse' %}" class="btn btn-outline-secondary" aria-label="Learn more about domestic abuse">Learn More</a>
+      </div>
     </div>
     <div class="hero-image mt-4">
-      <img src="{% static 'images/women.jpg' %}" alt="Supportive women" class="img-fluid">
+      <img src="{% static 'images/women.jpg' %}" alt="Group of supportive women" class="img-fluid">
     </div>
   </div>
 </section>
 
-
 <!-- Essential Services -->
 <section class="text-center essential-services-section">
-
   <div class="container">
-    <h2 class="mb-4">Our Essential Services for</h2>
-    <h2>for Women in Need</h2>
+    <h2 class="mb-4">Our Essential Services</h2>
+    <h2>For Women in Need</h2>
     <div class="row">
       <div class="col-md-4">
-        <h5>Refuge & Safe house</h5>
+        <h5>Refuge & Safe House</h5>
         <p>Secure temporary accommodation for women and children escaping domestic abuse.</p>
       </div>
       <div class="col-md-4">
@@ -50,7 +43,7 @@
 </section>
 
 <!-- Understanding Domestic Abuse Section -->
-<section class=" bg-white info-section">
+<section class="bg-white info-section">
   <div class="container">
     <div class="row justify-content-left text-left mb-5">
       <div class="col-lg-10">
@@ -64,7 +57,6 @@
       </div>
     </div>
 
-    <!-- Grid: 2 help cards -->
     <div class="row mt-5 gy-4">
       <div class="col-md-6">
         <div class="card-info h-100 border-0 shadow-sm">
@@ -72,7 +64,7 @@
             <i class="bi bi-info-circle-fill text-danger fs-2 mb-3"></i>
             <h6 class="fw-bold">Signs You May Be Experiencing Domestic Abuse</h6>
             <p class="text-muted small">Recognising the signs is the first step towards seeking help.</p>
-            <a href="#" class="text-dark fw-medium text-decoration-none mt-auto">Learn More <i class="bi bi-arrow-right"></i></a>
+            <a href="{% url 'types_of_abuse' %}" class="text-dark fw-medium text-decoration-none mt-auto" aria-label="Learn more about types of abuse">Learn More <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -83,7 +75,7 @@
             <i class="bi bi-heart-fill text-danger fs-2 mb-3"></i>
             <h6 class="fw-bold">How to Get Help and Support</h6>
             <p class="text-muted small">Reach out to local resources for support and guidance.</p>
-            <a href="#" class="text-dark fw-medium text-decoration-none mt-auto">Get help <i class="bi bi-arrow-right"></i></a>
+            <a href="{% url 'contact' %}" class="text-dark fw-medium text-decoration-none mt-auto" aria-label="Contact us to get help">Get Help <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -91,32 +83,23 @@
   </div>
 </section>
 
-
-
-        
-
-<!-- Make a Difference Today Section -->
+<!-- Make a Difference Section -->
 <section class="make-a-difference-section py-5">
   <div class="container">
     <div class="row align-items-center">
-      
-      <!-- Text Column -->
       <div class="col-md-6 mb-4 mb-md-0">
         <h2 class="fw-semibold">Make a Difference Today</h2>
         <p class="lead text-muted">
           Your support can change lives. Join us in empowering women and fostering hope in our community.
         </p>
         <div class="mt-3">
-          <a href="{% url 'donate' %}" class="btn btn-primary me-2">Donate</a>
-          <a href="#" class="btn btn-outline-secondary">Get Involved</a>
+          <a href="{% url 'donate' %}" class="btn btn-primary me-2" aria-label="Donate now">Donate</a>
+          <a href="{% url 'contact' %}" class="btn btn-outline-secondary" aria-label="Find ways to get involved">Get Involved</a>
         </div>
       </div>
-      
-      <!-- Image Column -->
       <div class="col-md-6">
         <img src="{% static 'images/women-talking.jpg' %}" alt="Women in conversation" class="img-fluid rounded shadow">
       </div>
-
     </div>
   </div>
 </section>
@@ -125,7 +108,6 @@
 <section class="latest-news-preview py-5">
   <div class="container">
     <h2 class="mb-4">Latest News</h2>
-    
     <div class="row g-4">
       {% for post in latest_posts %}
         <div class="col-md-4">
@@ -145,9 +127,7 @@
   </div>
 </section>
 
-
-
-
+<!-- FAQ Section -->
 <section class="faq-section">
   <div class="container">
     <h2 class="mb-4 text-center">Frequently Asked Questions</h2>
@@ -161,7 +141,7 @@
         </h2>
         <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel elit vitae arcu accumsan fermentum.
+            We offer a range of vital services including refuge accommodation, crisis support, legal advocacy, and community outreach programs. Our trained staff are here to help women and children rebuild their lives in a safe and supportive environment.
           </div>
         </div>
       </div>
@@ -174,7 +154,7 @@
         </h2>
         <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean id lorem at dui placerat.
+            If you or someone you know needs help, please contact us through our website's contact form or call our 24-hour support line. All communication is confidential, and we’ll listen without judgment and help you access the right support.
           </div>
         </div>
       </div>
@@ -187,7 +167,7 @@
         </h2>
         <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            Yes. We understand the importance of privacy and safety. All our services are fully confidential, and your personal information is never shared without your consent. Your safety is our top priority.
           </div>
         </div>
       </div>
@@ -195,10 +175,5 @@
     </div>
   </div>
 </section>
-
-
-
-
-
 
 {% endblock %}

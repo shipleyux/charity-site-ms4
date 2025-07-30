@@ -1,75 +1,77 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container my-5">
-  <h1 class="mb-4">Understanding Abuse</h1>
-  <div class="accordion" id="abuseAccordion">
+<main class="flex-grow-1">
+  <div class="container my-5">
+    <h1 class="mb-4 text-center">Understanding Domestic Abuse</h1>
+    <div class="accordion" id="abuseAccordion">
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-          What is emotional abuse?
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#abuseAccordion">
-        <div class="accordion-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Emotional abuse content goes here.
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            What is emotional abuse?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#abuseAccordion">
+          <div class="accordion-body">
+            Emotional abuse involves patterns of behaviour that chip away at a person’s self-esteem and confidence. It can include name-calling, manipulation, isolation from loved ones, or making the person feel worthless or dependent.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-          What is physical abuse?
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#abuseAccordion">
-        <div class="accordion-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Physical abuse content goes here.
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            What is physical abuse?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#abuseAccordion">
+          <div class="accordion-body">
+            Physical abuse includes any act of violence such as hitting, slapping, pushing, or the use of weapons. It can also involve controlling behaviours like locking someone in a room or preventing them from getting medical help.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-          What is sexual abuse?
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#abuseAccordion">
-        <div class="accordion-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sexual abuse content goes here.
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What is sexual abuse?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#abuseAccordion">
+          <div class="accordion-body">
+            Sexual abuse involves any sexual activity without consent. This can include rape, unwanted touching, coercion, or being made to watch or perform sexual acts against one’s will.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFour">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-          What is financial abuse?
-        </button>
-      </h2>
-      <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#abuseAccordion">
-        <div class="accordion-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Financial abuse content goes here.
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            What is financial abuse?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#abuseAccordion">
+          <div class="accordion-body">
+            Financial abuse includes controlling someone's access to money, stealing income or savings, placing debt in their name, or preventing them from working or accessing financial information.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFive">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-          What is digital abuse?
-        </button>
-      </h2>
-      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#abuseAccordion">
-        <div class="accordion-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Digital abuse content goes here.
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            What is digital abuse?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#abuseAccordion">
+          <div class="accordion-body">
+            Digital abuse involves using technology (phones, social media, GPS, etc.) to control, harass, stalk, or intimidate a partner. It can include monitoring activity, sending threats, or demanding constant contact.
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
+</main>
 {% endblock %}

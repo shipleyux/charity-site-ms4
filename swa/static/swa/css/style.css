@@ -396,3 +396,7 @@ body {
 .bg-lilac {
   background-color: #ede6f0; /* soft lilac */
 }
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}

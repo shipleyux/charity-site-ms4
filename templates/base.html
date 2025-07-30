@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'swa/css/style.css' %}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+
 
   <div class="safety-banner text-black py-2 px-3">
     <div class="container d-flex justify-content-between align-items-center small">
@@ -33,9 +34,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="{% url 'types_of_abuse' %}">Understanding Abuse</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">News</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'donate' %}">Donate</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'donate' %}">Donate</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">News</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
           {% if user.is_authenticated %}
           <li class="nav-item dropdown">
@@ -61,12 +62,12 @@
   
 
   <!-- Main page content -->
-  <main class="container-fluid px-0">
+  <main class="container-fluid px-0 flex-grow-1">
     {% block content %}
     {% endblock %}
   </main>
 
-  <footer class="bg-light text-center text-lg-start mt-5 border-top">
+  <footer class="bg-light text-center text-lg-start border-top pt-3">
     <div class="container py-4">
       <div class="row">
         <div class="col-md-6 text-md-start mb-3 mb-md-0">
@@ -74,17 +75,18 @@
           <p class="mb-0">Supporting women and children affected by domestic abuse.</p>
         </div>
         <div class="col-md-6 text-md-end">
-          <a href="{% url 'home' %}" class="text-decoration-none me-3">Home</a>
-          <a href="{% url 'donate' %}" class="text-decoration-none me-3">Donate</a>
-          <a href="{% url 'contact' %}" class="text-decoration-none">Contact</a>
+          <a href="{% url 'home' %}" class="text-dark text-decoration-none me-3">Home</a>
+          <a href="{% url 'donate' %}" class="text-dark text-decoration-none me-3">Donate</a>
+          <a href="{% url 'contact' %}" class="text-dark text-decoration-none">Contact</a>
         </div>
       </div>
       <div class="text-center pt-3 small text-muted">
         &copy; 2025 Swansea Women's Aid. All rights reserved.
-        | <a href="{% url 'account_login' %}">Staff login</a>
+        | <a href="{% url 'account_login' %}" class="text-dark text-decoration-none">Staff login</a>
       </div>
     </div>
   </footer>
+  
 
 
   <script src="{% static 'swa/js/hide-site.js' %}" defer></script>

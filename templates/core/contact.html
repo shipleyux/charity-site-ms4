@@ -4,19 +4,76 @@
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
-<section class="py-5 bg-light">
+<!-- Hero Contact Section -->
+<section class="py-5 bg-lilac text-center">
+  <div class="container">
+    <h1 class="mb-3">We're Here to Help – Get in Touch</h1>
+    <p class="lead text-muted">Our dedicated team is available 24/7 to support you. Don’t hesitate to contact us for assistance.</p>
+    <!-- Hero Section Buttons -->
+<div class="d-flex justify-content-center gap-3 mt-4">
+  <a href="tel:01792644683" class="btn btn-dark" aria-label="Call Swansea Women’s Aid 24-hour helpline">Call Now</a>
+  <a href="{% url 'types_of_abuse' %}" class="btn btn-outline-dark" aria-label="Read about the indicators of abuse">Indicators of Abuse</a>
+</div>
+
+  </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <div class="row mb-5">
+      <div class="col-md-4">
+        <i class="bi bi-envelope-fill fs-3 text-dark mb-2"></i>
+        <h5>Email</h5>
+        <p class="text-muted">Reach out for support and guidance at any time.</p>
+        <p><a href="mailto:admin@swanseawa.org.uk">admin@swanseawa.org.uk</a></p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-telephone-fill fs-3 text-dark mb-2"></i>
+        <h5>Call</h5>
+        <p class="text-muted">Connect with trained professionals for immediate assistance.</p>
+        <p><a href="tel:01792644683">01792 644 683</a></p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-geo-alt-fill fs-3 text-dark mb-2"></i>
+        <h5>Location</h5>
+        <p class="text-muted">For urgent matters, please call our office directly.</p>
+        <p><a href="https://www.google.com/maps?q=8-11+Gore+Street,+SA1+3PP" target="_blank">8–11 Gore Street, SA1 3PP</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Emergency Help Section -->
+<section class="py-5 bg-dark text-white text-center">
+  <div class="container">
+    <h2>Emergencies</h2>
+    <p class="lead">If you are in immediate danger, call <strong>999</strong>. For non-emergencies, contact the police at <strong>101</strong>.</p>
+    <!-- Emergency Buttons -->
+<div class="d-flex justify-content-center gap-3 mt-3">
+  <a href="tel:999" class="btn btn-light" aria-label="Call emergency services at 999">Call 999 now</a>
+  <a href="tel:101" class="btn btn-outline-light" aria-label="Call police non-emergency number 101">Call 101</a>
+</div>
+
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-5">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="p-4 p-md-5 bg-white border rounded shadow-sm">
-          <h2 class="mb-4 text-center">Contact Us</h2>
+          <h3 class="mb-4 text-center">Send Us a Message</h3>
           <p class="text-muted text-center mb-4">If you need support or want to get in touch with our team, please fill in the form below. We’ll get back to you as soon as we can.</p>
           <form method="post">
             {% csrf_token %}
             {{ form|crispy }}
-            <div class="text-center">
-              <button type="submit" class="btn btn-dark mt-3 px-4">Send Message</button>
-            </div>
+          <!-- Form Submit -->
+<div class="text-center">
+  <button type="submit" class="btn btn-dark mt-3 px-4" aria-label="Submit your message to Swansea Women’s Aid">Send Message</button>
+</div>
+
           </form>
         </div>
       </div>
@@ -24,4 +81,5 @@
   </div>
 </section>
 {% endblock %}
+}
 

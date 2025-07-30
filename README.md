@@ -15,18 +15,37 @@ To access the admin-only features during assessment:
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [Overview](#swansea-womens-aid-website)
+- [Admin Login for Testing](#-admin-login-for-testing)
 - [Scope](#scope)
 - [Market Research](#market-research)
-- [Business & Marketing Plan](#business-&-marketing-plan)
-- [UX Design](#ux-design)
+- [Business & Marketing Plan](#business--marketing-plan)
+- [Key Performance Indicators (KPIs)](#key-performance-indicators-kpis)
+- [🛠️ Development Plan](#️-development-plan)
+- [📆 Timeline](#-timeline)
+- [User Research](#user-research)
+- [🎯 User Experience (UX)](#-user-experience-ux)
+  - [🔍 Research-Driven Design](#-research-driven-design)
+  - [User Stories](#user-stories)
+  - [🧭 Information Architecture (IA)](#-information-architecture-ia)
+  - [Page Layout & Content Structure](#page-layout--content-structure)
+  - [Staff Login Placement](#staff-login-placement)
+- [Testing & Bug Log](#testing--bug-log)
+- [Future Enhancements](#future-enhancements)
 - [Features](#features)
-- [Database Schema](#database-schema)
+- [🧩 Data Models & Entity Relationship Diagram](#-data-models--entity-relationship-diagram)
+  - [📝 Post Model](#-post-model)
+  - [💳 Donation Model](#-donation-model)
+  - [📬 ContactMessage Model](#-contactmessage-model)
+- [CRUD Functionality & Admin Access](#crud-functionality--admin-access)
 - [Technologies Used](#technologies-used)
 - [Installation & Deployment](#installation--deployment)
-- [Testing](#testing)
-- [Bugs & Issues](#bugs--issues)
-- [Future Enhancements](#future-enhancements)
+  - [Local Installation](#local-installation)
+  - [Deployment (Heroku)](#deployment-heroku)
+  - [Static Files](#static-files)
+- [💬 Personal Reflection](#-personal-reflection)
+- [🙏 Acknowledgements & Accreditations](#-acknowledgements--accreditations)
+
 
 
 ## Scope
@@ -363,7 +382,7 @@ To access the admin-only features during assessment:
 - Donation form integrated with Stripe
 - Contact form with success message confirmation
 - Custom admin panel with user permissions
-- 404 and 500 error pages
+
 
 ## Technologies Used
 

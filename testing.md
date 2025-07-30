@@ -17,7 +17,6 @@ Manual tests were performed on all key features using a range of browsers (Chrom
 | Contact form                | Tested required fields and success message upon submission                      | Pass ✅         |
 | Stripe donation form        | Verified with test card, handled success/cancel flows                           | Pass ✅         |
 | User authentication         | Tested login, logout, restricted page access for unauthenticated users          | Pass ✅         |
-| 404 / 500 error pages       | Triggered intentionally to confirm custom error pages are displayed             | Pass ✅         |
 | Footer login link           | Confirmed visibility and restricted access only for staff                       | Pass ✅         |
 
 ### Stripe Testing

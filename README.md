@@ -6,6 +6,13 @@ The site is designed with accessibility, user experience, and scalability in min
 
 ---
 
+### 🌐 Live Site
+
+You can view the deployed project here:  
+👉 [https://swansea-womens-aid-f1ad8ce1317d.herokuapp.com/](https://swansea-womens-aid-f1ad8ce1317d.herokuapp.com/)
+
+---
+
 ### 🔐 Admin Login for Testing
 
 To access the admin-only features during assessment:
